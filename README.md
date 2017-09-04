@@ -6,7 +6,7 @@ Display traffic light timings for a given time period.
 
 * Download [PLT Racket](https://download.racket-lang.org/)
 * Open DrRacket
-* Open "coding test.rkt" (or cut-n-paste from github)
+* Go to "File"->"Open...", then find "coding test.rkt" (or cut-n-paste the code from github)
 * Press the run button in the top right corner
 * Enjoy the output!
 
