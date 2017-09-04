@@ -7,10 +7,10 @@
 
 ;List the timings, in seconds, follow by the state
 [define time-table [circular-list 
-                    '[270  "NS Green,  EW Red"]
-                    '[30   "NS Yellow, EW Red"]
-                    '[270  "NS Red,    EW Green"]
-                    '[30   "NS Red,    EW Yellow"]
+                    '[270  "(N,S) Green,  (E,W) Red"]
+                    '[30   "(N,S) Yellow, (E,W) Red"]
+                    '[270  "(N,S) Red,    (E,W) Green"]
+                    '[30   "(N,S) Red,    (E,W) Yellow"]
                     ]]
 
 ;Add a some seconds to a time (which must be in YYYY-MM-DD HH:MM:SS format)
@@ -45,20 +45,21 @@
            (check-equal?  [compareTime "2019-02-28 23:59:59" "2019-03-01 00:00:29"] #t "less than")
            (check-equal?  [compareTime "2019-03-01 00:00:29" "2019-02-28 23:59:59"] #f "greater than")
            ]
+
 [test-case "sample output"
            (check-equal?  [makeTimes "2017-09-01 12:30:00" "2017-09-01 13:00:00" time-table]
-                          '("2017-09-01 12:30:00: NS Green,  EW Red"
-                            "2017-09-01 12:34:30: NS Yellow, EW Red"
-                            "2017-09-01 12:35:00: NS Red,    EW Green"
-                            "2017-09-01 12:39:30: NS Red,    EW Yellow"
-                            "2017-09-01 12:40:00: NS Green,  EW Red"
-                            "2017-09-01 12:44:30: NS Yellow, EW Red"
-                            "2017-09-01 12:45:00: NS Red,    EW Green"
-                            "2017-09-01 12:49:30: NS Red,    EW Yellow"
-                            "2017-09-01 12:50:00: NS Green,  EW Red"
-                            "2017-09-01 12:54:30: NS Yellow, EW Red"
-                            "2017-09-01 12:55:00: NS Red,    EW Green"
-                            "2017-09-01 12:59:30: NS Red,    EW Yellow")
+                          '("2017-09-01 12:30:00: (N,S) Green,  (E,W) Red"
+                            "2017-09-01 12:34:30: (N,S) Yellow, (E,W) Red"
+                            "2017-09-01 12:35:00: (N,S) Red,    (E,W) Green"
+                            "2017-09-01 12:39:30: (N,S) Red,    (E,W) Yellow"
+                            "2017-09-01 12:40:00: (N,S) Green,  (E,W) Red"
+                            "2017-09-01 12:44:30: (N,S) Yellow, (E,W) Red"
+                            "2017-09-01 12:45:00: (N,S) Red,    (E,W) Green"
+                            "2017-09-01 12:49:30: (N,S) Red,    (E,W) Yellow"
+                            "2017-09-01 12:50:00: (N,S) Green,  (E,W) Red"
+                            "2017-09-01 12:54:30: (N,S) Yellow, (E,W) Red"
+                            "2017-09-01 12:55:00: (N,S) Red,    (E,W) Green"
+                            "2017-09-01 12:59:30: (N,S) Red,    (E,W) Yellow")
                           "sample output")]
 
 ;Print the times
